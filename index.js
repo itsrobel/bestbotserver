@@ -2,6 +2,12 @@ const io = require("socket.io-client");
 const socket = io("http://localhost:5000");
 const nodemailer = require('nodemailer');
 const { default: axios } = require('axios');
+const express = require('express')
+const app = express()
+
+
+
+app.engine('html', require('ejs').renderFile)
 
 socket.on("connect", () => {
 	console.log(socket.connected); // true
@@ -109,22 +115,7 @@ async function run()
 	} 
 
 }
-mailList.forEach(email => {
-	let mail = {
-		from : "bestbot server",
-		to: email,
-		subject: "server",
-		text: "server has started"
-	}
-	transport.sendEmail(mail, (err , data) => {
-		if (err) {
-			console.log(err)
-			res.json({
-				status:'fail'
-			})
-		} else {
-			res.json({status:'success'})
-		}
-	})
+app.get('/', function(req, res)  {
+    res.render("./index.ejs")
 })
 run()
