@@ -9,7 +9,7 @@ socket.on("connect", () => {
 
 const mailList = 
 [
-	"{list of users to mail too}"
+	"itsrobel.schwarz@gmail.com"
 ]
 
 const productQuerryList = [
@@ -76,6 +76,8 @@ async function sendEmail(productLink)
 	})
 }
 
+
+
 async function run()
 {
 	let noStock = true
@@ -107,4 +109,22 @@ async function run()
 	} 
 
 }
+mailList.forEach(email => {
+	let mail = {
+		from : "bestbot server",
+		to: email,
+		subject: "server",
+		text: "server has started"
+	}
+	transport.sendEmail(mail, (err , data) => {
+		if (err) {
+			console.log(err)
+			res.json({
+				status:'fail'
+			})
+		} else {
+			res.json({status:'success'})
+		}
+	})
+})
 run()
