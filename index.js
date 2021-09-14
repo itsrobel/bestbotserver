@@ -118,6 +118,7 @@ async function run()
 app.get('/', function(req, res)  {
     res.render("./index.ejs")
 })
-const PORT =  process.env.PORT|| 3000
-app.listen(3000, console.log(`server listening on port ${PORT}`))
+const PORT =  process.env.PORT|| 9000
+
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 run()
