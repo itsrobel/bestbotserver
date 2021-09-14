@@ -19,9 +19,9 @@ const mailList =
 ]
 
 const productQuerryList = [
-	// "https://api.bestbuy.com/v1/products((search=g305))?apiKey=uzRVwWVLmGW7td4eMGEDWw92&format=json",
-	"https://api.bestbuy.com/v1/products((search=RTX&search=3060)&salePrice<400&salePrice>300)?apiKey=uzRVwWVLmGW7td4eMGEDWw92&facet=salePrice&format=json", 
-	"https://api.bestbuy.com/v1/products((search=GTX&search=1660)&salePrice<300&salePrice>200)?apiKey=uzRVwWVLmGW7td4eMGEDWw92&facet=salePrice&format=json" 
+	"https://api.bestbuy.com/v1/products((search=g305))?apiKey=uzRVwWVLmGW7td4eMGEDWw92&format=json",
+	//"https://api.bestbuy.com/v1/products((search=RTX&search=3060)&salePrice<400&salePrice>300)?apiKey=uzRVwWVLmGW7td4eMGEDWw92&facet=salePrice&format=json", 
+	//"https://api.bestbuy.com/v1/products((search=GTX&search=1660)&salePrice<300&salePrice>200)?apiKey=uzRVwWVLmGW7td4eMGEDWw92&facet=salePrice&format=json" 
 ]
 const transport = {
 	service: "gmail",
